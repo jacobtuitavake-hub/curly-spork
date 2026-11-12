@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#91d8f5">
+  <title>COOLEST TAG GAME EVER!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen" id="screen">
+    <canvas width="960" height="540" id="game" aria-label="Platform tag game"></canvas>
+
+    <div class="hud hidden" id="hud">
+      <div class="hud-left">
+        <div class="hud-chip" id="levelHud">01 &nbsp; SUNNY PARK</div>
+        <div class="hud-chip"><span class="tag-status" id="statusHud">● YOU'RE SAFE</span></div>
+      </div>
+      <div class="hud-center"><strong id="clock">45</strong><small>SECONDS</small></div>
+      <div class="hud-right">
+        <div class="hud-chip">DASH <span class="dash-track"><span class="dash-progress" id="dashFill"></span></span></div>
+      </div>
+    </div>
+
+    <div class="overlay" id="menu">
+      <div class="panel">
+        <span class="pill">3 MAPS · DASH · DOUBLE JUMP</span>
+        <h2>Are you ready for <span>fun?</span></h2>
+        <p>Pick your level, then stay away from the player who's IT.</p>
+        <div class="level-grid" id="levelGrid">
+          <button class="level-card selected" data-level="0" aria-pressed="true"><span class="map-art art-park"></span><strong>01 · Sunny Park</strong><small>Easy • 45 seconds</small></button>
+          <button class="level-card" data-level="1" aria-pressed="false"><span class="map-art art-city"></span><strong>02 · Rooftops</strong><small>Medium • 50 seconds</small></button>
+          <button class="level-card" data-level="2" aria-pressed="false"><span class="map-art art-canyon"></span><strong>03 · Canyons</strong><small>Hard • 55 seconds</small></button>
+        </div>
+        <div class="mode">
+          <span class="mode-label">Game mode</span>
+          <div class="mode-buttons" id="modeButtons"><button data-mode="bot" class="active">Vs Computer</button><button data-mode="local">2 Players</button></div>
+        </div>
+        <button class="primary" id="startButton">START GAME →</button>
+        <div class="note">P1: A / D MOVE &nbsp;·&nbsp; W OR SPACE JUMP &nbsp;·&nbsp; LEFT SHIFT DASH<br>P2: ARROWS MOVE &nbsp;·&nbsp; UP JUMP &nbsp;·&nbsp; RIGHT SHIFT DASH<br>ESC TO PAUSE</div>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="pauseMenu">
+      <div class="panel">
+        <span class="pill">TAKE A BREAK</span>
+        <h2>Paused.</h2>
+        <p>Return when you're ready to run!</p>
+        <div class="actions"><button class="secondary" id="quitButton">LEVELS</button><button class="primary" id="resumeButton">RESUME →</button></div>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="endMenu">
+      <div class="panel">
+        <span class="pill" id="endEyebrow">LEVEL COMPLETE</span>
+        <h2 id="endTitle">Nice escape!</h2>
+        <p id="endDesc">You weren't IT when the timer ended.</p>
+        <div class="actions"><button class="secondary" id="endLevels">LEVELS</button><button class="secondary" id="replay">RETRY ↻</button><button class="primary" id="nextLevel">NEXT →</button></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
